@@ -38,28 +38,30 @@ This dataset contains question-answer pairs collected and organized for evaluati
 | Legal Agreements              | 12       | FActScore      | [CDM Documentation](https://cdm.finos.org/)                              |
 | Process Model                 | 19       | FActScore    | [CDM Documentation](https://cdm.finos.org/)                              |
 | General and Other             | 9        | FActScore   | [CDM Documentation](https://cdm.finos.org/)                              |
-| Implementation & Deployment  | 46       | FActScore    | [FAQs](https://www.finos.org/faq), FINOS CDM organizers, [CDM Documentation](https://cdm.finos.org/) |
-| **Total**                     | **126**  |                |                                                                          |
+| Implementation & Deployment  | 42       | FActScore    | [FAQs](https://www.finos.org/faq), FINOS CDM organizers, [CDM Documentation](https://cdm.finos.org/) |
+| **Total**                     | **122**  |                |                                                                          |
 
 #### 📁 MOF Dataset
 
 | **Data Category**            | **Size** | **Metrics**     | **Data Source**                                                                 |
 |-----------------------------|----------|----------------|---------------------------------------------------------------------------------|
-| License Abbreviations       | 41       | Accuracy   | [OSI Website](https://opensource.org/licenses)                                 |
+| License Abbreviations       | 31       | Accuracy   | [OSI Website](https://opensource.org/licenses)                                 |
 | License OSI Approval        | 50       | Accuracy       | [OSI Website](https://opensource.org/licenses)                                 |
-| Question Answering          | 70       | FActScore      | [OSI Website](https://opensource.org/licenses), [MOF Documentation](https://arxiv.org/abs/2403.13784) |
-| **Total**                   | **161**  |                |                                                                                 |
+| Question Answering          | 59       | FActScore      | [OSI Website](https://opensource.org/licenses), [MOF Documentation](https://arxiv.org/abs/2403.13784) |
+| **Total**                   | **140**  |                |                                                                                 |
 
 #### 📁 XBRL Dataset
 
 | **Data Category**                         | **Size** | **Metrics**     | **Data Source**                                                                 |
 |------------------------------------------|----------|----------------|---------------------------------------------------------------------------------|
-| XBRL Term                                | 500      | FActScore      | [XBRL Agent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993495)                     |
-| Domain Query to XBRL Reports             | 50       | FActScore      | [XBRL Agent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993495) |
+| XBRL Term                                | 391      | FActScore      | [XBRL Agent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993495)                     |
+| Domain Query to XBRL Reports             | 40       | FActScore      | [XBRL Agent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993495) |
 | Financial Math                           | 90       | Accuracy       | [XBRL Agent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993495)                     |
 | Numeric Query to XBRL Reports            | 50       | FActScore      | [XBRL Agent](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993495) |
-| XBRL Tag Query to XBRL Reports           | 50       | Accuracy       | [XBRL filings from SEC Website](https://www.sec.gov/)           |                                                                            |
-| **Total**                                | **740** |                |                                                                                 |
+| XBRL Tag Query to XBRL Reports           | 90       | Accuracy       | [XBRL filings from SEC Website](https://www.sec.gov/)           |                                                                            |
+| FiNER: Financial Numeric Entity Recognition for XBRL Tagging           | 100  |     Selectively provided | FiNER-139 Dataset: https://huggingface.co/datasets/nlpaueb/finer-139, https://github.com/nlpaueb/finer |
+| FNXL: Financial Numeric Extreme Labelling              | 100 |       Selectively provided   | FNXL Dataset: https://huggingface.co/datasets/ChanceFocus/flare-fnxl, https://arxiv.org/abs/2306.03723 |
+| **Total**                                | **861** |                |                                                                                 |
 
 ##### 📂 How to Download XBRL Filings
 
@@ -95,15 +97,17 @@ This script offers a basic template to:
 
 > 💡 This data helps build XBRL term comprehension tasks, enabling models to understand and explain technical terms used in filings. Participants are encouraged to adapt and extend the script to suit their own dataset construction needs.
 
+Note: We will additionally test on a subset of the FiNER-139 and FNXL datasets. Please use the batched versions provided in this folder for fine-tuning to avoid overfitting. To test, please use the code from https://github.com/Open-Finance-Lab/FinLoRA/blob/main/test/xbrl.py.
+
 ---
 
 #### 📦 Dataset Summary
 
 | **Domain** | **Total QA Pairs** |
 |------------|--------------------|
-| CDM        | 126                |
-| MOF        | 161                |
-| XBRL       | 740               |
+| CDM        | 122                |
+| MOF        | 140                |
+| XBRL       | 861               |
 
 ### 📊 Metrics
 The model evaluation is the average score of all tasks. 
